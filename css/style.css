@@ -44,7 +44,7 @@ body{
 	color: #252B42;
 	font-weight: 500;
 	font-family: Arial, Helvetica, sans-serif;	
-	background: #FAFAFA;
+	background: #ffffff;
 }
 
 /*-------------------------------------------------------------------------------------*/
@@ -56,37 +56,147 @@ body{
 	flex-direction: column;
 }
 
-/*-------------------------------------------------------------------------------------*/
 
-._container{
-	/*max-width: 1500px;*/
-	padding: 0 15px;
-	margin: 0 auto;
-	box-sizing: content-box;
-}
 
 
 /*-----HEADER-------------------------------------------------------------------*/
 
 .header {
-	/*position: absolute;*/
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 50;
-}
-.header__container {
 	display: flex;
-	min-height: 104px;
-	align-items: center;
-	flex-direction: column;	
+	padding: 18px 50px 30px;
+	text-align: center;
+	align-items:center;
+	flex-direction: column;
+	background-color: #ffffff;
 }
 
+.header__logo {
+	font-size: 19px;
+	letter-spacing: 5px;
+	margin: 5px;
+}
 
-/*----MAIN-BLOCK---------------------------------------------------------------------*/
+.header__menu {
+	text-align: center;
+
+}
+
+.menu_list {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	margin-top: 20px;	
+}
+
+.menu__item {
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+}
+
+.menu__item:not(:last-child) {
+	margin-right: 25px;
+}
+
 
 .main_block {
+	flex: 1 1 auto;	
+}
+
+/*------ SLIDE BLOCK -------------------------------------------------*/
+
+.slide_list {
+	display: flex;
+	
+}
+
+.slide__item {}
+
+.slide__img {
+	max-width: 100%;
+}
+
+/*------ COLLECTION BLOCK -------------------------------------------------*/
+
+.collection__block {
+	padding: 0 50px;
+}
+
+/* ----- TODO нужно сделать хэдер*/
+
+.collection__header {
+	font-size: 19px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 5px;
+	text-align: center;
+	padding: 80px 50px 50px;
+}
+
+.collection__body {
+	font-size: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+	justify-content: center;
 }
 
 
-.footer {}
+.collection__column {	
+	flex: 0 1 25%;
+	padding: 0 15px;
+	/*padding: 0 30px 25px 0;	*/
+}
+
+
+/*.collection__column:not(:last-child) {
+	margin: 0 15px;	
+}*/
+
+
+.collection__image {
+	border-radius: 20px;
+	overflow: hidden;	
+}
+
+.collection__image img{
+	max-width: 100%;
+	min-width: 250px;	
+}
+
+/*@media (max-width: 1040px){*/
+
+
+.collection__title {
+
+}
+
+.collection__price {}
+
+
+/*------ FOOTER -------------------------------------------------*/
+
+.footer {
+	background-color: rgb(144, 255, 255);
+}
+
+.qwerty {
+	font-size: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
+.qwerty__column {
+	background-color: blanchedalmond;
+	flex: 0 1 33.333%;
+}
+
+.qwerty__text {}
+
+.qwerty__image {}
+
+.qwerty__image img {
+	max-width: 100%;
+}
