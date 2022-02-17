@@ -39,19 +39,25 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 /*-------------------------------------------------------------------------------------*/
 
-/*@font-face {
-	font-family: 'Futura';
-	src: url("../fonts/FuturaLightC.woff2"), url("./fonts/FuturaLightC.woff");
-	font-style: normal;
-	font-weight: 300;	
-}*/
-
 @font-face {
 	font-family: 'Futura';
 	src: url('../fonts/futurabookc.eot');
 	src: local('☺'), url('../fonts/futurabookc.woff') format('woff'), url('../fonts/futurabookc.ttf') format('truetype'), url('../fonts/futurabookc.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+.ref-hover {
+	letter-spacing: 0.3em;
+	-webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  	-webkit-transition-property: letter-spacing;
+  	transition-property: letter-spacing;		
+}
+
+.ref-hover:hover {	
+	letter-spacing: 0.4em;
+	color: black;
 }
 
 
@@ -77,14 +83,27 @@ body{
 
 .header {
 	display: flex;
-	padding: 18px 50px 30px;
+	padding: 18px 30px 20px;
 	text-align: center;
-	align-items:center;
-	flex-direction: column;	
+	align-items:center;	
+	justify-content: space-between;
 	position: sticky;
 	background-color: #ffffff;
 	top: 0px;
 	z-index: 10;
+}
+
+.header__body {	
+	display: flex;	
+	text-align: center;
+	align-items:center;
+	flex-direction: column;
+	flex-basis: 70%		
+}
+
+.header-icon img{
+	max-width: 25px;
+	margin: 5px;
 }
 
 .header__logo {
@@ -113,14 +132,12 @@ body{
 }
 
 .menu__item:not(:last-child) {
-	margin-right: 25px;
+	margin-right: 40px;
 }
 
 
 .main_block {
-	flex: 1 1 auto;
-	position: sticky;
-	top: 0px;
+	flex: 1 1 auto;	
 }
 
 /*------ SLIDE BLOCK -------------------------------------------------*/
@@ -131,29 +148,29 @@ body{
 
 .slide__item {}
 
-.slide__img {
+.slide__img {	
 	max-width: 100%;
 }
 
 /*------ COLLECTION BLOCK -------------------------------------------------*/
 
-.collection__block {
-	padding: 0 50px;
+.collection__body {
+	padding: 0 30px;
 }
 
-/* ----- TODO нужно сделать хэдер*/
 
-.collection__header {
-	font-size: 20px;
+.collection__title {
+	font-size: 18px;
 	color: #868383;
-	text-transform: uppercase;
-	letter-spacing: 5px;
+	text-transform: uppercase;	
 	margin: 5px;
 	text-align: center;
-	padding: 80px 50px 50px;
+	margin-top: 50px;
+	margin-bottom: 20px;	
 }
 
-.collection__body {
+
+.collection__items {	
 	font-size: 20px;
 	display: flex;
 	flex-wrap: wrap;
@@ -162,14 +179,14 @@ body{
 }
 
 
-.collection__column {	
+.column-collection {	
 	flex: 0 1 25%;
 	padding: 0 18px;
 	/*padding: 0 30px 25px 0;	*/
 }
 
 @media (max-width: 1025px){
-	.collection__column {
+	.column-collection {
 	flex: 0 1 50%;
 	}
 }
@@ -179,39 +196,40 @@ body{
 }*/
 
 
-.collection__image {
+.image-collection {
 	border-radius: 20px;
 	overflow: hidden;
-	background-color: rgb(233, 233, 233);
+	background-color: rgb(255, 255, 255);
 	-webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   	-webkit-transition-property: background-color;
   	transition-property: background-color;	
 }
 
-.collection__image:hover {
+.image-collection:hover {
 	background-color: rgb(197, 197, 197);
 }
 
 
-.collection__image img{
+.image-collection img{
 	max-width: 100%;
 	/*min-width: 250px;	*/
 }
 
-.collection__content div{
+.content-collection div{
 	font-size: 13px;
-	color: #868383;
-	letter-spacing: 0.3em;
+	color: #868383;	
 	padding-left: 10px;
 }
 
-.collection__title {
+
+.content-title {
 	margin: 25px 0 15px 0;	
 	text-transform: uppercase;	
 }
 
-.collection__price {	
+
+.content-price {	
 	margin-bottom: 25px;
 }
 
@@ -222,26 +240,4 @@ body{
 	background-color: rgb(144, 255, 255);
 }
 
-.qwerty {
-	font-size: 20px;
-	display: flex;
-	flex-wrap: wrap;
-}
 
-
-
-.qwerty__column {
-	background-color: blanchedalmond;
-	flex: 0 1 33.333%;
-}
-
-.qwerty__text {
-	text-transform: uppercase;
-	
-}
-
-.qwerty__image {}
-
-.qwerty__image img {
-	max-width: 100%;
-}
