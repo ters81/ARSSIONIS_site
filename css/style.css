@@ -39,25 +39,39 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 /*-------------------------------------------------------------------------------------*/
 
+/*@font-face {
+	font-family: 'Futura';
+	src: url("../fonts/FuturaLightC.woff2"), url("./fonts/FuturaLightC.woff");
+	font-style: normal;
+	font-weight: 300;	
+}*/
+
+@font-face {
+	font-family: 'Futura';
+	src: url('../fonts/futurabookc.eot');
+	src: local('☺'), url('../fonts/futurabookc.woff') format('woff'), url('../fonts/futurabookc.ttf') format('truetype'), url('../fonts/futurabookc.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 body{	
 	font-size: 16px;
 	color: #252B42;
 	font-weight: 500;
-	font-family: Arial, Helvetica, sans-serif;	
-	background: #ffffff;
+	font-family: 'Futura', sans-serif;	
+	background: #ffffff;	
 }
 
 /*-------------------------------------------------------------------------------------*/
 
 .wrapper{
 	min-height: 100%;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
-
-
-
 
 /*-----HEADER-------------------------------------------------------------------*/
 
@@ -66,14 +80,18 @@ body{
 	padding: 18px 50px 30px;
 	text-align: center;
 	align-items:center;
-	flex-direction: column;
+	flex-direction: column;	
+	position: sticky;
 	background-color: #ffffff;
+	top: 0px;
+	z-index: 10;
 }
 
 .header__logo {
 	font-size: 19px;
 	letter-spacing: 5px;
 	margin: 5px;
+	color: #3a3a3a;	
 }
 
 .header__menu {
@@ -100,14 +118,15 @@ body{
 
 
 .main_block {
-	flex: 1 1 auto;	
+	flex: 1 1 auto;
+	position: sticky;
+	top: 0px;
 }
 
 /*------ SLIDE BLOCK -------------------------------------------------*/
 
 .slide_list {
-	display: flex;
-	
+	display: flex;	
 }
 
 .slide__item {}
@@ -125,7 +144,8 @@ body{
 /* ----- TODO нужно сделать хэдер*/
 
 .collection__header {
-	font-size: 19px;
+	font-size: 20px;
+	color: #868383;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 5px;
@@ -137,17 +157,22 @@ body{
 	font-size: 20px;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 -15px;
+	margin: 0 -18px;
 	justify-content: center;
 }
 
 
 .collection__column {	
 	flex: 0 1 25%;
-	padding: 0 15px;
+	padding: 0 18px;
 	/*padding: 0 30px 25px 0;	*/
 }
 
+@media (max-width: 1025px){
+	.collection__column {
+	flex: 0 1 50%;
+	}
+}
 
 /*.collection__column:not(:last-child) {
 	margin: 0 15px;	
@@ -156,22 +181,39 @@ body{
 
 .collection__image {
 	border-radius: 20px;
-	overflow: hidden;	
+	overflow: hidden;
+	background-color: rgb(233, 233, 233);
+	-webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  	-webkit-transition-property: background-color;
+  	transition-property: background-color;	
 }
+
+.collection__image:hover {
+	background-color: rgb(197, 197, 197);
+}
+
 
 .collection__image img{
 	max-width: 100%;
-	min-width: 250px;	
+	/*min-width: 250px;	*/
 }
 
-/*@media (max-width: 1040px){*/
-
+.collection__content div{
+	font-size: 13px;
+	color: #868383;
+	letter-spacing: 0.3em;
+	padding-left: 10px;
+}
 
 .collection__title {
-
+	margin: 25px 0 15px 0;	
+	text-transform: uppercase;	
 }
 
-.collection__price {}
+.collection__price {	
+	margin-bottom: 25px;
+}
 
 
 /*------ FOOTER -------------------------------------------------*/
@@ -193,7 +235,10 @@ body{
 	flex: 0 1 33.333%;
 }
 
-.qwerty__text {}
+.qwerty__text {
+	text-transform: uppercase;
+	
+}
 
 .qwerty__image {}
 
